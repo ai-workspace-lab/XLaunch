@@ -71,8 +71,8 @@ ApplicationWindow {
      Accessible.name: appName
      Accessible.onPressAction: catalog.launch(index)
      Rectangle {anchors.fill:parent;anchors.margins:8;radius:5;color:(grid.currentIndex===index&&grid.activeFocus)||mouse.containsMouse?(root.systemTheme?root.palette.alternateBase:"#20ffffff"):"transparent";border.color:(grid.currentIndex===index&&grid.activeFocus)?(root.systemTheme?root.palette.highlight:"#80ffffff"):"transparent"}
-     Image {anchors.horizontalCenter:parent.horizontalCenter;y:12*root.uiScale;width:64*root.uiScale;height:64*root.uiScale;source:appIcon;sourceSize:Qt.size(96,96);fillMode:Image.PreserveAspectFit}
-     Label {anchors.horizontalCenter:parent.horizontalCenter;y:87*root.uiScale;width:parent.width-10;text:appName;color:root.foreground;font.pixelSize:17*root.uiScale;horizontalAlignment:Text.AlignHCenter;elide:Text.ElideRight;maximumLineCount:2;wrapMode:Text.Wrap}
+     Image {anchors.horizontalCenter:parent.horizontalCenter;y:12*root.uiScale;width:76*root.uiScale;height:76*root.uiScale;source:appIcon;sourceSize:Qt.size(96,96);fillMode:Image.PreserveAspectFit}
+     Label {anchors.horizontalCenter:parent.horizontalCenter;y:99*root.uiScale;width:parent.width-10;text:appName;color:root.foreground;font.pixelSize:17*root.uiScale;horizontalAlignment:Text.AlignHCenter;elide:Text.ElideRight;maximumLineCount:2;wrapMode:Text.Wrap}
      MouseArea {id:mouse;anchors.fill:parent;hoverEnabled:true;onClicked:{grid.currentIndex=index;catalog.launch(index)}}
     }
     Keys.onReturnPressed: catalog.launch(currentIndex)
