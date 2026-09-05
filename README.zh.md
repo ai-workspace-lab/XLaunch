@@ -2,6 +2,8 @@
 
 # XLaunch
 
+macOS 原生启动器首版：[C++ / Qt Quick 源码与构建说明](launcher/README.md)。已实现本机应用发现、搜索、启动和琥珀/系统主题；Linux 适配仍在规划中。
+
 ## XLaunch · 经典桌面，AI 指令
 
 配套独立项目：[XDock](https://github.com/ai-workspace-lab/XDock)，负责固定应用、运行指示和窗口切换；与 XLaunch 分别运行和发布。

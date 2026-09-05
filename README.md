@@ -6,6 +6,8 @@
 
 # XLaunch
 
+Native macOS launcher implementation: [C++ / Qt Quick source and build instructions](launcher/README.md). Includes real local app discovery/launching and Amber/System themes; Linux integration remains planned.
+
 ## XLaunch · Classic desktop, AI commands
 
 Companion project: [XDock](https://github.com/ai-workspace-lab/XDock), an independent classic dock for pinned apps, running indicators and window switching.
