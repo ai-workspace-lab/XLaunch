@@ -18,6 +18,8 @@ int main(int argc,char **argv){
    int total=catalog.rowCount(); catalog.setQuery("___missing_application___");
    if(catalog.rowCount()!=0||catalog.launch(-1))return 1;
    catalog.setQuery("");if(catalog.rowCount()!=total)return 2;
+   int paged=0;for(int start=0;start<total;start+=35)paged+=catalog.page(start,35).size();
+   if(paged!=total||!catalog.page(total+1,35).isEmpty())return 4;
    qInfo()<<"Catalog filtering and bounds passed; applications:"<<total;return total>0?0:3;
  }
  QQmlApplicationEngine engine; engine.rootContext()->setContextProperty("catalog",&catalog);engine.addImageProvider("apps",new Icons(&catalog));
@@ -34,6 +36,9 @@ int main(int argc,char **argv){
  QObject::connect(&catalog,&Catalog::launched,window,&QWindow::hide);
  QObject::connect(&tray,&QSystemTrayIcon::activated,[&](auto reason){if(reason==QSystemTrayIcon::Trigger){window->show();window->raise();window->requestActivate();}});
  app.setQuitOnLastWindowClosed(false);
- if(app.arguments().contains("--screenshot")) QTimer::singleShot(2000,[&]{window->grabWindow().save("xlaunch-preview.png");app.quit();});
+ if(app.arguments().contains("--screenshot")) {
+   window->showNormal();window->resize(1448,1086);
+   QTimer::singleShot(2000,[&]{window->grabWindow().save("xlaunch-preview.png");app.quit();});
+ }
  return app.exec();
 }

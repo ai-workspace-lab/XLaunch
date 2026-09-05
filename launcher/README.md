@@ -26,6 +26,9 @@ Use Qt's `macdeployqt` with `-qmldir=launcher/qml` to bundle runtime dependencie
 - Mouse and keyboard activation; arrow navigation, Enter launch, Escape clear/hide, Command-F search.
 - Native LaunchServices activation, without executing interpolated shell commands.
 - Menu-bar reopen/quit and Dock activation reopen, amber background and responsive scrollable grid.
+- Classic Launchpad-inspired horizontal pages, clickable page dots, arrow-key selection and Control-Left/Right page navigation. Reopening resets search/category. Icon dimensions remain 76 logical design pixels scaled with the viewport; tighter cells and surrounding margins create density without shrinking icons.
+
+This borrows pre-macOS-15 Launchpad's browse/search/launch pattern while retaining the chosen category rail. Folder grouping, drag-to-reorder and edit/jiggle mode are not yet implemented.
 
 ## Current limits
 

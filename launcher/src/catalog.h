@@ -7,6 +7,7 @@ class Catalog : public QAbstractListModel {
  Q_PROPERTY(QString query READ query WRITE setQuery NOTIFY filterChanged)
  Q_PROPERTY(QString category READ category WRITE setCategory NOTIFY filterChanged)
  Q_PROPERTY(int count READ rowCount NOTIFY filterChanged)
+ Q_PROPERTY(int revision READ revision NOTIFY filterChanged)
  public:
  enum Roles {Name=Qt::UserRole+1, Icon, Path};
  QList<Application> apps; QList<int> visible;
@@ -19,6 +20,9 @@ class Catalog : public QAbstractListModel {
  void setQuery(QString); void setCategory(QString);
  Q_INVOKABLE void refresh();
  Q_INVOKABLE bool launch(int row);
+ int generation=0;
+ int revision() const {return generation;}
+ Q_INVOKABLE QVariantList page(int start,int size) const;
  signals: void filterChanged(); void launched(); void failure(QString message);
  private: void filter();
 };

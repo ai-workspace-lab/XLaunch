@@ -26,3 +26,7 @@ Implementation evidence: local deliverables `outputs/XLaunch-macOS-compact.png` 
 Native accessibility actions verified query `计算器` produced one result, clicking it started the macOS Calculator process, an unmatched query showed zero results, and the Network category filtered to network apps. Filter/bounds self-test passed; last timed CTest run was 0.23s. Menu/theme code compiled and both visual modes rendered. Keyboard shortcuts are implemented but not exhaustively exercised by UI automation.
 
 No actionable P0/P1/P2 layout issue remains for this MVP. Remaining product work: global shortcut, full desktop-specific theme integration, live inventory refresh, Agent/system providers and signed self-contained distribution. These are documented feature limits, not implied completed features.
+
+## Final user refinement
+
+The user requested unchanged icon size and pre-macOS-15 Launchpad-style operation. Restored 76-unit icon boxes; tightened cell spacing instead. Replaced vertical scrolling with horizontal pages and interactive dots. A 1448×1086 offscreen software-rendered capture was inspected to avoid capturing live keyboard input from the user's desktop; this matches the reference aspect ratio and shows five complete rows. Native Metal capture and the earlier native app activation tests remain separate evidence; offscreen capture does not validate trackpad gestures. Model pagination bounds are included in the self-test. Folder/reordering behavior remains a documented omission.
