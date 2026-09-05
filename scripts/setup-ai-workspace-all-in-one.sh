@@ -5,7 +5,7 @@ set -euo pipefail
 # AI Workspace All-in-One Bootstrap Script
 # ==============================================================================
 # Usage:
-#   curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/xworkspace-console/main/scripts/setup-ai-workspace-all-in-one.sh | bash -
+#   curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/XLaunch/main/scripts/setup-ai-workspace-all-in-one.sh | bash -
 #
 # Subcommands (pass as the first argument, e.g. `... | bash -s -- uninstall`):
 #   uninstall          Stop & remove all AI Workspace apps/services (launchd
@@ -50,7 +50,7 @@ set -euo pipefail
 #   AI_WORKSPACE_OFFLINE_PACKAGE_URL (direct tarball URL)
 #   AI_WORKSPACE_OFFLINE_PACKAGE_BASE_URL (mirror directory containing target tarball)
 #   AI_WORKSPACE_OFFLINE_RELEASE_TAG=latest (GitHub release tag or latest)
-#   AI_WORKSPACE_OFFLINE_REPO=ai-workspace-lab/xworkspace-console
+#   AI_WORKSPACE_OFFLINE_REPO=ai-workspace-lab/XLaunch
 #   AI_WORKSPACE_OFFLINE_AUTO_DOWNLOAD=true (download matching GitHub release package in auto mode)
 #   AI_WORKSPACE_OFFLINE_WORK_DIR=/tmp/ai-workspace-offline
 #   AI_WORKSPACE_DEPLOYMENT_LOCK_TIMEOUT=1800
@@ -70,7 +70,7 @@ if [ -z "$TARGET_DIR" ]; then
     trap 'rm -rf "$TARGET_DIR"' EXIT
 fi
 PLAYBOOK_DIR=${PLAYBOOK_DIR:-""}
-XWORKSPACE_CONSOLE_REPO_URL=${XWORKSPACE_CONSOLE_REPO_URL:-"https://github.com/ai-workspace-lab/xworkspace-console.git"}
+XWORKSPACE_CONSOLE_REPO_URL=${XWORKSPACE_CONSOLE_REPO_URL:-"https://github.com/ai-workspace-lab/XLaunch.git"}
 XWORKSPACE_CONSOLE_DIR=${XWORKSPACE_CONSOLE_DIR:-""}
 if [ -z "$XWORKSPACE_CONSOLE_DIR" ]; then
     # Try to auto-detect if we are running inside a local checkout on macOS
@@ -102,7 +102,7 @@ AI_WORKSPACE_DEFAULT_MODEL=${AI_WORKSPACE_DEFAULT_MODEL:-"deepseek/deepseek-v4-f
 AI_WORKSPACE_FALLBACK_MODEL=${AI_WORKSPACE_FALLBACK_MODEL:-"deepseek/deepseek-v4-pro"}
 VAULT_FILE=${AI_WORKSPACE_VAULT_PASSWORD_FILE:-"$HOME/.vault_password"}
 AI_WORKSPACE_OFFLINE_MODE=${AI_WORKSPACE_OFFLINE_MODE:-"auto"}
-AI_WORKSPACE_OFFLINE_REPO=${AI_WORKSPACE_OFFLINE_REPO:-"ai-workspace-lab/xworkspace-console"}
+AI_WORKSPACE_OFFLINE_REPO=${AI_WORKSPACE_OFFLINE_REPO:-"ai-workspace-lab/XLaunch"}
 AI_WORKSPACE_OFFLINE_RELEASE_TAG=${AI_WORKSPACE_OFFLINE_RELEASE_TAG:-"latest"}
 if [ -z "${AI_WORKSPACE_OFFLINE_WORK_DIR:-}" ]; then
     if command -v df >/dev/null 2>&1; then
@@ -492,7 +492,7 @@ offline_package_filename() {
 
 resolve_offline_release_tag() {
     local filename=$1
-    local repo="${AI_WORKSPACE_OFFLINE_REPO:-ai-workspace-lab/xworkspace-console}"
+    local repo="${AI_WORKSPACE_OFFLINE_REPO:-ai-workspace-lab/XLaunch}"
     local requested_tag="${AI_WORKSPACE_OFFLINE_RELEASE_TAG:-latest}"
     local tag=""
 
@@ -1024,7 +1024,7 @@ append_macos_console_identity_vars() {
     ANSIBLE_EXTRA_VARS+=("-e" "xworkspace_console_config_dir=$console_home/.config/ai-workspace")
     ANSIBLE_EXTRA_VARS+=("-e" "xworkspace_console_scripts_dir=$console_home/xworkspace/scripts")
     ANSIBLE_EXTRA_VARS+=("-e" "xworkspace_console_repo_dir=$XWORKSPACE_CONSOLE_DIR")
-    ANSIBLE_EXTRA_VARS+=("-e" "xworkspace_console_source_repo=https://github.com/ai-workspace-lab/xworkspace-console.git")
+    ANSIBLE_EXTRA_VARS+=("-e" "xworkspace_console_source_repo=https://github.com/ai-workspace-lab/XLaunch.git")
     ANSIBLE_EXTRA_VARS+=("-e" "xworkspace_console_source_version=main")
     ANSIBLE_EXTRA_VARS+=("-e" "xworkspace_console_api_working_dir=$XWORKSPACE_CONSOLE_DIR/api")
     ANSIBLE_EXTRA_VARS+=("-e" '{"xworkspace_console_api_exec":"/usr/bin/env go run ."}')
@@ -1170,7 +1170,7 @@ ensure_port_available() {
 patch_playbooks_for_macos() {
     info "Fetching and running macOS playbook patches..."
     local patch_script="/tmp/patch-macos-playbooks.py"
-    local raw_url="https://raw.githubusercontent.com/ai-workspace-lab/xworkspace-console/main/scripts/patch-macos-playbooks.py"
+    local raw_url="https://raw.githubusercontent.com/ai-workspace-lab/XLaunch/main/scripts/patch-macos-playbooks.py"
     local local_patch_script
     local_patch_script="${XWORKSPACE_CONSOLE_DIR}/scripts/patch-macos-playbooks.py"
 

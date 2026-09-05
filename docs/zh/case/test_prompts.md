@@ -9,7 +9,7 @@
 ## 1. 快速安装（一键部署）
 
 ```bash
-curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/xworkspace-console/main/scripts/setup-ai-workspace-all-in-one.sh | bash -
+curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/XLaunch/main/scripts/setup-ai-workspace-all-in-one.sh | bash -
 ```
 
 ## 2. 带 API Key 安装
@@ -19,26 +19,26 @@ export DEEPSEEK_API_KEY="<your-deepseek-api-key>"
 export NVIDIA_API_KEY="<your-nvidia-api-key>"
 export OLLAMA_API_KEY="<your-ollama-api-key>"
 
-curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/xworkspace-console/main/scripts/setup-ai-workspace-all-in-one.sh | bash -
+curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/XLaunch/main/scripts/setup-ai-workspace-all-in-one.sh | bash -
 ```
 
 ## 3. 卸载（保留数据）
 
 ```bash
-curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/xworkspace-console/main/scripts/setup-ai-workspace-all-in-one.sh | bash -s -- uninstall
+curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/XLaunch/main/scripts/setup-ai-workspace-all-in-one.sh | bash -s -- uninstall
 ```
 
 ## 4. 彻底卸载（清除所有数据）
 
 ```bash
-curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/xworkspace-console/main/scripts/setup-ai-workspace-all-in-one.sh | bash -s -- uninstall --purge
+curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/XLaunch/main/scripts/setup-ai-workspace-all-in-one.sh | bash -s -- uninstall --purge
 ```
 
 ## 5. 完整生命周期测试（卸载 → 重装）
 
 ```bash
 # Step 1: 彻底卸载
-curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/xworkspace-console/main/scripts/setup-ai-workspace-all-in-one.sh | bash -s -- uninstall --purge
+curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/XLaunch/main/scripts/setup-ai-workspace-all-in-one.sh | bash -s -- uninstall --purge
 
 # Step 2: 设置 API Keys
 export DEEPSEEK_API_KEY="<your-deepseek-api-key>"
@@ -46,7 +46,7 @@ export NVIDIA_API_KEY="<your-nvidia-api-key>"
 export OLLAMA_API_KEY="<your-ollama-api-key>"
 
 # Step 3: 重新安装
-curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/xworkspace-console/main/scripts/setup-ai-workspace-all-in-one.sh | bash -
+curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/XLaunch/main/scripts/setup-ai-workspace-all-in-one.sh | bash -
 ```
 
 ## 6. 使用本地 Playbook 开发调试

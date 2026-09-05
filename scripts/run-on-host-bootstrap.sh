@@ -74,7 +74,7 @@ fi
   set +e
   source "$remote_env"
   export AI_WORKSPACE_OFFLINE_MODE XWORKMATE_BRIDGE_DOMAIN AI_WORKSPACE_AUTH_TOKEN DEEPSEEK_API_KEY NVIDIA_API_KEY OLLAMA_API_KEY AI_WORKSPACE_BRANCH BRANCH
-  bash -lc "curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/xworkspace-console/${AI_WORKSPACE_BRANCH}/scripts/setup-ai-workspace-all-in-one.sh | bash -"
+  bash -lc "curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/XLaunch/${AI_WORKSPACE_BRANCH}/scripts/setup-ai-workspace-all-in-one.sh | bash -"
   rc=$?
   printf '%s\n' "$rc" > "$remote_rc"
   exit "$rc"

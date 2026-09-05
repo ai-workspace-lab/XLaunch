@@ -15,12 +15,12 @@
 **默认备份:**
 （默认将备份到 `~/ai_workspace_backup.tar.gz.enc`）
 ```bash
-curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/xworkspace-console/main/scripts/setup-ai-workspace-all-in-one.sh | bash -s -- backup
+curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/XLaunch/main/scripts/setup-ai-workspace-all-in-one.sh | bash -s -- backup
 ```
 
 **自定义输出路径:**
 ```bash
-curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/xworkspace-console/main/scripts/setup-ai-workspace-all-in-one.sh | bash -s -- backup --output /data/my_cold_backup.tar.gz.enc
+curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/XLaunch/main/scripts/setup-ai-workspace-all-in-one.sh | bash -s -- backup --output /data/my_cold_backup.tar.gz.enc
 ```
 
 ---
@@ -32,12 +32,12 @@ curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/xworkspace-console/
 **默认恢复:**
 （默认查找 `~/ai_workspace_backup.tar.gz.enc`）
 ```bash
-curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/xworkspace-console/main/scripts/setup-ai-workspace-all-in-one.sh | bash -s -- restore
+curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/XLaunch/main/scripts/setup-ai-workspace-all-in-one.sh | bash -s -- restore
 ```
 
 **自定义输入路径:**
 ```bash
-curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/xworkspace-console/main/scripts/setup-ai-workspace-all-in-one.sh | bash -s -- restore --input /data/my_cold_backup.tar.gz.enc
+curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/XLaunch/main/scripts/setup-ai-workspace-all-in-one.sh | bash -s -- restore --input /data/my_cold_backup.tar.gz.enc
 ```
 
 ---
@@ -48,7 +48,7 @@ curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/xworkspace-console/
 
 **从远程用户/主机迁移:**
 ```bash
-curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/xworkspace-console/main/scripts/setup-ai-workspace-all-in-one.sh | bash -s -- migrate --source ubuntu@openclaw.svc.plus
+curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/XLaunch/main/scripts/setup-ai-workspace-all-in-one.sh | bash -s -- migrate --source ubuntu@openclaw.svc.plus
 ```
 *(在运行此命令之前，请确保你拥有免密 SSH，或者已为 `ubuntu@openclaw.svc.plus` 加载了活动的代理)。*
 
@@ -61,13 +61,13 @@ curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/xworkspace-console/
 **标准卸载:**
 （停止服务并移除二进制文件，但保持数据缓存完整）
 ```bash
-curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/xworkspace-console/main/scripts/setup-ai-workspace-all-in-one.sh | bash -s -- uninstall
+curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/XLaunch/main/scripts/setup-ai-workspace-all-in-one.sh | bash -s -- uninstall
 ```
 
 **清除卸载:**
 （停止服务并销毁所有数据库、缓存、配置和用户状态。请极度谨慎使用！）
 ```bash
-curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/xworkspace-console/main/scripts/setup-ai-workspace-all-in-one.sh | bash -s -- uninstall --purge
+curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/XLaunch/main/scripts/setup-ai-workspace-all-in-one.sh | bash -s -- uninstall --purge
 ```
 
 ---

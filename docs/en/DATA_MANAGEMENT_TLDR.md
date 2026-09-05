@@ -15,12 +15,12 @@ Create an AES-256 encrypted archive of your entire workspace (Vault keys, LiteLL
 **Default Backup:**
 (Will backup to `~/ai_workspace_backup.tar.gz.enc` by default)
 ```bash
-curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/xworkspace-console/main/scripts/setup-ai-workspace-all-in-one.sh | bash -s -- backup
+curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/XLaunch/main/scripts/setup-ai-workspace-all-in-one.sh | bash -s -- backup
 ```
 
 **Custom Output Path:**
 ```bash
-curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/xworkspace-console/main/scripts/setup-ai-workspace-all-in-one.sh | bash -s -- backup --output /data/my_cold_backup.tar.gz.enc
+curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/XLaunch/main/scripts/setup-ai-workspace-all-in-one.sh | bash -s -- backup --output /data/my_cold_backup.tar.gz.enc
 ```
 
 ---
@@ -32,12 +32,12 @@ Restore the AI Workspace from a cold backup archive. This will seamlessly inject
 **Default Restore:**
 (Looks for `~/ai_workspace_backup.tar.gz.enc` by default)
 ```bash
-curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/xworkspace-console/main/scripts/setup-ai-workspace-all-in-one.sh | bash -s -- restore
+curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/XLaunch/main/scripts/setup-ai-workspace-all-in-one.sh | bash -s -- restore
 ```
 
 **Custom Input Path:**
 ```bash
-curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/xworkspace-console/main/scripts/setup-ai-workspace-all-in-one.sh | bash -s -- restore --input /data/my_cold_backup.tar.gz.enc
+curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/XLaunch/main/scripts/setup-ai-workspace-all-in-one.sh | bash -s -- restore --input /data/my_cold_backup.tar.gz.enc
 ```
 
 ---
@@ -48,7 +48,7 @@ Seamlessly migrate and merge an AI workspace from a remote node into the local m
 
 **Migrate from a Remote User/Host:**
 ```bash
-curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/xworkspace-console/main/scripts/setup-ai-workspace-all-in-one.sh | bash -s -- migrate --source ubuntu@openclaw.svc.plus
+curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/XLaunch/main/scripts/setup-ai-workspace-all-in-one.sh | bash -s -- migrate --source ubuntu@openclaw.svc.plus
 ```
 *(Ensure you have passwordless SSH or an active agent loaded for `ubuntu@openclaw.svc.plus` before running this command).*
 
@@ -61,13 +61,13 @@ Uninstall the AI Workspace components and configuration.
 **Standard Uninstall:**
 (Stops services and removes binaries but keeps data caches intact)
 ```bash
-curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/xworkspace-console/main/scripts/setup-ai-workspace-all-in-one.sh | bash -s -- uninstall
+curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/XLaunch/main/scripts/setup-ai-workspace-all-in-one.sh | bash -s -- uninstall
 ```
 
 **Purge Uninstall:**
 (Stops services and destroys all databases, caches, configurations, and user states. Use with extreme caution!)
 ```bash
-curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/xworkspace-console/main/scripts/setup-ai-workspace-all-in-one.sh | bash -s -- uninstall --purge
+curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/XLaunch/main/scripts/setup-ai-workspace-all-in-one.sh | bash -s -- uninstall --purge
 ```
 
 ---

@@ -9,7 +9,7 @@ This document provides standardized prompt templates used for testing `setup-ai-
 ## 1. Quick Installation (One-Click Deployment)
 
 ```bash
-curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/xworkspace-console/main/scripts/setup-ai-workspace-all-in-one.sh | bash -
+curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/XLaunch/main/scripts/setup-ai-workspace-all-in-one.sh | bash -
 ```
 
 ## 2. Installation with API Keys
@@ -19,26 +19,26 @@ export DEEPSEEK_API_KEY="<your-deepseek-api-key>"
 export NVIDIA_API_KEY="<your-nvidia-api-key>"
 export OLLAMA_API_KEY="<your-ollama-api-key>"
 
-curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/xworkspace-console/main/scripts/setup-ai-workspace-all-in-one.sh | bash -
+curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/XLaunch/main/scripts/setup-ai-workspace-all-in-one.sh | bash -
 ```
 
 ## 3. Uninstall (Keep Data)
 
 ```bash
-curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/xworkspace-console/main/scripts/setup-ai-workspace-all-in-one.sh | bash -s -- uninstall
+curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/XLaunch/main/scripts/setup-ai-workspace-all-in-one.sh | bash -s -- uninstall
 ```
 
 ## 4. Complete Uninstall (Purge All Data)
 
 ```bash
-curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/xworkspace-console/main/scripts/setup-ai-workspace-all-in-one.sh | bash -s -- uninstall --purge
+curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/XLaunch/main/scripts/setup-ai-workspace-all-in-one.sh | bash -s -- uninstall --purge
 ```
 
 ## 5. Full Lifecycle Test (Uninstall → Reinstall)
 
 ```bash
 # Step 1: Complete Uninstall
-curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/xworkspace-console/main/scripts/setup-ai-workspace-all-in-one.sh | bash -s -- uninstall --purge
+curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/XLaunch/main/scripts/setup-ai-workspace-all-in-one.sh | bash -s -- uninstall --purge
 
 # Step 2: Set API Keys
 export DEEPSEEK_API_KEY="<your-deepseek-api-key>"
@@ -46,7 +46,7 @@ export NVIDIA_API_KEY="<your-nvidia-api-key>"
 export OLLAMA_API_KEY="<your-ollama-api-key>"
 
 # Step 3: Reinstall
-curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/xworkspace-console/main/scripts/setup-ai-workspace-all-in-one.sh | bash -
+curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/XLaunch/main/scripts/setup-ai-workspace-all-in-one.sh | bash -
 ```
 
 ## 6. Develop and Debug with Local Playbooks

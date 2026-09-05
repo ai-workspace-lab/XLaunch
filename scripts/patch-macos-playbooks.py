@@ -492,7 +492,7 @@ def main():
             download_new = (
                 "    - name: Download XWorkspace Console runtime release\n"
                 "      ansible.builtin.get_url:\n"
-                "        url: \"https://github.com/ai-workspace-lab/xworkspace-console/releases/latest/download/xworkspace-console-runtime-{{ ansible_system | lower }}-{{ 'amd64' if ansible_architecture in ['x86_64', 'amd64'] else 'arm64' }}.tar.gz\"\n"
+                "        url: \"https://github.com/ai-workspace-lab/XLaunch/releases/latest/download/xworkspace-console-runtime-{{ ansible_system | lower }}-{{ 'amd64' if ansible_architecture in ['x86_64', 'amd64'] else 'arm64' }}.tar.gz\"\n"
                 "        dest: \"/tmp/xworkspace-console-runtime.tar.gz\"\n"
                 "        mode: \"0644\"\n"
                 "        force: true\n"

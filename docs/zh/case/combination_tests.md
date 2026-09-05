@@ -19,7 +19,7 @@
 ### COMBO-001: 全新安装（无 API Key）
 
 ```bash
-curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/xworkspace-console/main/scripts/setup-ai-workspace-all-in-one.sh | bash -
+curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/XLaunch/main/scripts/setup-ai-workspace-all-in-one.sh | bash -
 ```
 
 **预期结果**: 安装完成，LiteLLM 等服务以空配置启动，控制台可访问。
@@ -33,7 +33,7 @@ export DEEPSEEK_API_KEY="sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 export NVIDIA_API_KEY="nvapi-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 export OLLAMA_API_KEY="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.xxxxxxxxxxxxxxxx"
 
-curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/xworkspace-console/main/scripts/setup-ai-workspace-all-in-one.sh | bash -
+curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/XLaunch/main/scripts/setup-ai-workspace-all-in-one.sh | bash -
 ```
 
 **预期结果**: 安装完成，API Key 自动注入 LiteLLM 配置，AI 模型网关可正常代理请求。
@@ -43,7 +43,7 @@ curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/xworkspace-console/
 ### COMBO-003: 卸载（保留数据）
 
 ```bash
-curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/xworkspace-console/main/scripts/setup-ai-workspace-all-in-one.sh | bash -s -- uninstall
+curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/XLaunch/main/scripts/setup-ai-workspace-all-in-one.sh | bash -s -- uninstall
 ```
 
 **预期结果**: 停止所有服务，移除运行时文件，保留用户数据和配置。
@@ -53,7 +53,7 @@ curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/xworkspace-console/
 ### COMBO-004: 彻底卸载（清除所有数据）
 
 ```bash
-curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/xworkspace-console/main/scripts/setup-ai-workspace-all-in-one.sh | bash -s -- uninstall --purge
+curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/XLaunch/main/scripts/setup-ai-workspace-all-in-one.sh | bash -s -- uninstall --purge
 ```
 
 **预期结果**: 停止所有服务，移除运行时文件，清除所有用户数据、配置和本地数据库。
@@ -64,14 +64,14 @@ curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/xworkspace-console/
 
 ```bash
 # Step 1: 彻底卸载
-curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/xworkspace-console/main/scripts/setup-ai-workspace-all-in-one.sh | bash -s -- uninstall --purge
+curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/XLaunch/main/scripts/setup-ai-workspace-all-in-one.sh | bash -s -- uninstall --purge
 
 # Step 2: 带 Key 重装
 export DEEPSEEK_API_KEY="sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 export NVIDIA_API_KEY="nvapi-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 export OLLAMA_API_KEY="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.xxxxxxxxxxxxxxxx"
 
-curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/xworkspace-console/main/scripts/setup-ai-workspace-all-in-one.sh | bash -
+curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/XLaunch/main/scripts/setup-ai-workspace-all-in-one.sh | bash -
 ```
 
 **预期结果**: 卸载干净无残留，重装后一切正常运行，API Key 正确注入。
@@ -82,8 +82,8 @@ curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/xworkspace-console/
 
 ```bash
 # 连续执行两次安装
-curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/xworkspace-console/main/scripts/setup-ai-workspace-all-in-one.sh | bash -
-curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/xworkspace-console/main/scripts/setup-ai-workspace-all-in-one.sh | bash -
+curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/XLaunch/main/scripts/setup-ai-workspace-all-in-one.sh | bash -
+curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/XLaunch/main/scripts/setup-ai-workspace-all-in-one.sh | bash -
 ```
 
 **预期结果**: 第二次运行应以幂等方式完成，不产生错误，`changed` 计数应接近 0。

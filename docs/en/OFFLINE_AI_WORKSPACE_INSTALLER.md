@@ -38,7 +38,7 @@ The online bootstrap prefers the matching offline package from the
 `ai-workspace-lab/xworkspace-console` GitHub releases when it is available:
 
 ```bash
-curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/xworkspace-console/main/scripts/setup-ai-workspace-all-in-one.sh | bash -
+curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/XLaunch/main/scripts/setup-ai-workspace-all-in-one.sh | bash -
 ```
 
 Set `AI_WORKSPACE_OFFLINE_MODE=off` to force the legacy online-only path, or
@@ -48,7 +48,7 @@ prepared.
 The default package source is:
 
 ```text
-https://github.com/ai-workspace-lab/xworkspace-console/releases/download/<tag>/ai-workspace-all-in-one-offline-<distro>-<version>-<arch>.tar.gz
+https://github.com/ai-workspace-lab/XLaunch/releases/download/<tag>/ai-workspace-all-in-one-offline-<distro>-<version>-<arch>.tar.gz
 ```
 
 When `AI_WORKSPACE_OFFLINE_RELEASE_TAG=latest`, the bootstrap asks GitHub for

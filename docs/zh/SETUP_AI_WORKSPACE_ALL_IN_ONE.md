@@ -11,7 +11,7 @@
 当需要默认安全的本地工作区且仅需要生成或现有的统一 token 时使用此方式。
 
 ```bash
-curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/xworkspace-console/main/scripts/setup-ai-workspace-all-in-one.sh | bash -
+curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/XLaunch/main/scripts/setup-ai-workspace-all-in-one.sh | bash -
 ```
 
 ## 2. 进阶安装
@@ -19,7 +19,7 @@ curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/xworkspace-console/
 在 `bash -` 之前使用环境变量来自定义公开访问、安全级别和可选的桌面功能。
 
 ```bash
-curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/xworkspace-console/main/scripts/setup-ai-workspace-all-in-one.sh | \
+curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/XLaunch/main/scripts/setup-ai-workspace-all-in-one.sh | \
   AI_WORKSPACE_SECURITY_LEVEL=strict \
   XWORKSPACE_CONSOLE_ENABLE_XRDP=true \
   XWORKSPACE_CONSOLE_PUBLIC_ACCESS=true \
@@ -120,7 +120,7 @@ curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/xworkspace-console/
 对于当前 ACP Bridge 主机：
 
 ```bash
-curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/xworkspace-console/main/scripts/setup-ai-workspace-all-in-one.sh | \
+curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/XLaunch/main/scripts/setup-ai-workspace-all-in-one.sh | \
   XWORKMATE_BRIDGE_DOMAIN=acp-bridge.onwalk.net \
   XWORKMATE_BRIDGE_PUBLIC_ACCESS=true \
   AI_WORKSPACE_SECURITY_LEVEL=strict \

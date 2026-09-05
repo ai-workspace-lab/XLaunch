@@ -8,11 +8,11 @@ PACKAGE_VERSION="${PACKAGE_VERSION:-$(date -u +%Y%m%d%H%M%S)}"
 
 PLAYBOOKS_REPO="${PLAYBOOKS_REPO:-https://github.com/ai-workspace-infra/playbooks.git}"
 PLAYBOOKS_REF="${PLAYBOOKS_REF:-main}"
-CONSOLE_REPO="${CONSOLE_REPO:-https://github.com/ai-workspace-lab/xworkspace-console.git}"
+CONSOLE_REPO="${CONSOLE_REPO:-https://github.com/ai-workspace-lab/XLaunch.git}"
 CONSOLE_REF="${CONSOLE_REF:-main}"
 CORE_SKILLS_REPO="${CORE_SKILLS_REPO:-https://github.com/ai-workspace-lab/xworkspace-core-skills.git}"
 CORE_SKILLS_REF="${CORE_SKILLS_REF:-main}"
-CONSOLE_RUNTIME_RELEASE_REPO="${CONSOLE_RUNTIME_RELEASE_REPO:-ai-workspace-lab/xworkspace-console}"
+CONSOLE_RUNTIME_RELEASE_REPO="${CONSOLE_RUNTIME_RELEASE_REPO:-ai-workspace-lab/XLaunch}"
 CONSOLE_RUNTIME_RELEASE_TAG="${CONSOLE_RUNTIME_RELEASE_TAG:-latest-runtime}"
 BRIDGE_RUNTIME_RELEASE_REPO="${BRIDGE_RUNTIME_RELEASE_REPO:-ai-workspace-lab/xworkmate-bridge}"
 BRIDGE_RUNTIME_RELEASE_TAG="${BRIDGE_RUNTIME_RELEASE_TAG:-latest-runtime}"
@@ -492,10 +492,10 @@ main() {
 # AI Workspace All-in-One Offline Package
 
 The standard online bootstrap can use matching packages published from
-`https://github.com/ai-workspace-lab/xworkspace-console/releases` automatically:
+`https://github.com/ai-workspace-lab/XLaunch/releases` automatically:
 
 ```bash
-curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/xworkspace-console/main/scripts/setup-ai-workspace-all-in-one.sh | bash -
+curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/XLaunch/main/scripts/setup-ai-workspace-all-in-one.sh | bash -
 ```
 
 Extract this archive on the target host, then run:

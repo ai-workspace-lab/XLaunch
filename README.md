@@ -4,7 +4,20 @@
 
 [🇺🇸 English](README.md) | [🇨🇳 中文](README.zh.md)
 
-# XWorkspace Console
+# XLaunch
+
+## XLaunch · Classic desktop, AI commands
+
+Companion project: [XDock](https://github.com/ai-workspace-lab/XDock), an independent classic dock for pinned apps, running indicators and window switching.
+
+XLaunch is the new project name for this repository, formerly `ai-workspace-lab/xworkspace-console`. The selected launcher direction combines the amber 2013 DDE Classic visual language with application search, system actions, and natural-language Agent commands.
+
+![XLaunch selected amber concept](assets/designs/xlaunch/amber-classic-selected.png)
+
+[Design brief and platform plan](docs/en/designs/2026-09-05-xlaunch.md) · [中文设计说明](docs/zh/designs/2026-09-05-xlaunch.md)
+
+Status: visual direction selected; cross-platform launcher implementation is planned. macOS 26+, GNOME 50, KDE Plasma 6.6, DDE 7.0, and Xfce are design targets, not a tested compatibility claim. Existing console/runtime components and their installation identifiers remain available below.
+
 
 XWorkspace Console is the local AI workspace control plane for AI Workspace Lab. It brings together a React dashboard, Go status API, systemd user services, and XFCE desktop templates into one tabbed surface for services, runtime, terminal access, and workspace navigation.
 
@@ -30,7 +43,7 @@ XWorkspace Console is the local AI workspace control plane for AI Workspace Lab.
 1. Start the all-in-one installer:
 
 ```bash
-curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/xworkspace-console/main/scripts/setup-ai-workspace-all-in-one.sh | bash -
+curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/XLaunch/main/scripts/setup-ai-workspace-all-in-one.sh | bash -
 ```
 
 2. Automatic model registration (via API Keys):
@@ -41,7 +54,7 @@ export DEEPSEEK_API_KEY="sk-..."
 export NVIDIA_API_KEY="nvapi-..."
 export OLLAMA_API_KEY="your-key-here"
 
-curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/xworkspace-console/main/scripts/setup-ai-workspace-all-in-one.sh | bash -
+curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/XLaunch/main/scripts/setup-ai-workspace-all-in-one.sh | bash -
 ```
 
 3. Offline installation:
@@ -49,17 +62,17 @@ curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/xworkspace-console/
 Use a pre-downloaded deployment package by specifying its file path:
 ```bash
 export AI_WORKSPACE_OFFLINE_PACKAGE="/path/to/offline-package.tar.gz"
-curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/xworkspace-console/main/scripts/setup-ai-workspace-all-in-one.sh | bash -
+curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/XLaunch/main/scripts/setup-ai-workspace-all-in-one.sh | bash -
 ```
 
 ### Uninstallation
 
 ```bash
 # Standard uninstall (keeps configurations and states)
-curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/xworkspace-console/main/scripts/setup-ai-workspace-all-in-one.sh | bash -s -- uninstall
+curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/XLaunch/main/scripts/setup-ai-workspace-all-in-one.sh | bash -s -- uninstall
 
 # Purge (removes all data, keys, and configurations)
-curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/xworkspace-console/main/scripts/setup-ai-workspace-all-in-one.sh | bash -s -- uninstall --purge
+curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/XLaunch/main/scripts/setup-ai-workspace-all-in-one.sh | bash -s -- uninstall --purge
 ```
 
 ### Usage
@@ -78,8 +91,8 @@ http://127.0.0.1:17000
 
 ## Download
 
-- Latest source: [GitHub repository](https://github.com/ai-workspace-lab/xworkspace-console)
-- Releases: [GitHub Releases](https://github.com/ai-workspace-lab/xworkspace-console/releases)
+- Latest source: [GitHub repository](https://github.com/ai-workspace-lab/XLaunch)
+- Releases: [GitHub Releases](https://github.com/ai-workspace-lab/XLaunch/releases)
 - Bootstrap script: `scripts/setup-ai-workspace-all-in-one.sh`
 - Offline installer docs: [`docs/en/OFFLINE_AI_WORKSPACE_INSTALLER.md`](docs/en/OFFLINE_AI_WORKSPACE_INSTALLER.md)
 

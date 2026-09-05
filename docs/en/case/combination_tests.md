@@ -19,7 +19,7 @@ This document defines the end-to-end combination test matrix for `setup-ai-works
 ### COMBO-001: Fresh Installation (No API Key)
 
 ```bash
-curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/xworkspace-console/main/scripts/setup-ai-workspace-all-in-one.sh | bash -
+curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/XLaunch/main/scripts/setup-ai-workspace-all-in-one.sh | bash -
 ```
 
 **Expected Result**: Installation completes, services like LiteLLM start with empty configurations, and the console is accessible.
@@ -33,7 +33,7 @@ export DEEPSEEK_API_KEY="sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 export NVIDIA_API_KEY="nvapi-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 export OLLAMA_API_KEY="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.xxxxxxxxxxxxxxxx"
 
-curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/xworkspace-console/main/scripts/setup-ai-workspace-all-in-one.sh | bash -
+curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/XLaunch/main/scripts/setup-ai-workspace-all-in-one.sh | bash -
 ```
 
 **Expected Result**: Installation completes, API keys are automatically injected into the LiteLLM configuration, and the AI model gateway can proxy requests normally.
@@ -43,7 +43,7 @@ curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/xworkspace-console/
 ### COMBO-003: Uninstall (Keep Data)
 
 ```bash
-curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/xworkspace-console/main/scripts/setup-ai-workspace-all-in-one.sh | bash -s -- uninstall
+curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/XLaunch/main/scripts/setup-ai-workspace-all-in-one.sh | bash -s -- uninstall
 ```
 
 **Expected Result**: All services are stopped, runtime files are removed, but user data and configurations are preserved.
@@ -53,7 +53,7 @@ curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/xworkspace-console/
 ### COMBO-004: Complete Uninstall (Purge All Data)
 
 ```bash
-curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/xworkspace-console/main/scripts/setup-ai-workspace-all-in-one.sh | bash -s -- uninstall --purge
+curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/XLaunch/main/scripts/setup-ai-workspace-all-in-one.sh | bash -s -- uninstall --purge
 ```
 
 **Expected Result**: All services are stopped, runtime files are removed, and all user data, configurations, and local databases are purged.
@@ -64,14 +64,14 @@ curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/xworkspace-console/
 
 ```bash
 # Step 1: Complete Uninstall
-curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/xworkspace-console/main/scripts/setup-ai-workspace-all-in-one.sh | bash -s -- uninstall --purge
+curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/XLaunch/main/scripts/setup-ai-workspace-all-in-one.sh | bash -s -- uninstall --purge
 
 # Step 2: Reinstall with Keys
 export DEEPSEEK_API_KEY="sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 export NVIDIA_API_KEY="nvapi-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 export OLLAMA_API_KEY="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.xxxxxxxxxxxxxxxx"
 
-curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/xworkspace-console/main/scripts/setup-ai-workspace-all-in-one.sh | bash -
+curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/XLaunch/main/scripts/setup-ai-workspace-all-in-one.sh | bash -
 ```
 
 **Expected Result**: Uninstall leaves no residue, everything runs normally after reinstallation, and API keys are injected correctly.
@@ -82,8 +82,8 @@ curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/xworkspace-console/
 
 ```bash
 # Run installation twice consecutively
-curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/xworkspace-console/main/scripts/setup-ai-workspace-all-in-one.sh | bash -
-curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/xworkspace-console/main/scripts/setup-ai-workspace-all-in-one.sh | bash -
+curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/XLaunch/main/scripts/setup-ai-workspace-all-in-one.sh | bash -
+curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/XLaunch/main/scripts/setup-ai-workspace-all-in-one.sh | bash -
 ```
 
 **Expected Result**: The second run should complete idempotently without errors, and the `changed` count should be close to 0.

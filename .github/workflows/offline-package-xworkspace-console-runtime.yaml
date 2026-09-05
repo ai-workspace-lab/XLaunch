@@ -20,7 +20,7 @@ on:
         default: "main"
         type: string
       console_ref:
-        description: "ai-workspace-lab/xworkspace-console git ref"
+        description: "ai-workspace-lab/XLaunch git ref"
         required: false
         default: "main"
         type: string

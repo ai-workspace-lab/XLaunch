@@ -11,7 +11,7 @@ The bootstrap script uses this repository as the public entrypoint, then prepare
 Use this when you want the default secure local workspace and only need a generated or existing unified token.
 
 ```bash
-curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/xworkspace-console/main/scripts/setup-ai-workspace-all-in-one.sh | bash -
+curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/XLaunch/main/scripts/setup-ai-workspace-all-in-one.sh | bash -
 ```
 
 ## 2. Advanced Install
@@ -19,7 +19,7 @@ curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/xworkspace-console/
 Use environment variables before `bash -` to customize exposure, security, and optional desktop features.
 
 ```bash
-curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/xworkspace-console/main/scripts/setup-ai-workspace-all-in-one.sh | \
+curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/XLaunch/main/scripts/setup-ai-workspace-all-in-one.sh | \
   AI_WORKSPACE_SECURITY_LEVEL=strict \
   XWORKSPACE_CONSOLE_ENABLE_XRDP=true \
   XWORKSPACE_CONSOLE_PUBLIC_ACCESS=true \
@@ -118,7 +118,7 @@ First non-empty of: `AI_WORKSPACE_AUTH_TOKEN` → `XWORKSPACE_CONSOLE_AUTH_TOKEN
 For the current ACP Bridge host:
 
 ```bash
-curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/xworkspace-console/main/scripts/setup-ai-workspace-all-in-one.sh | \
+curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/XLaunch/main/scripts/setup-ai-workspace-all-in-one.sh | \
   XWORKMATE_BRIDGE_DOMAIN=acp-bridge.onwalk.net \
   XWORKMATE_BRIDGE_PUBLIC_ACCESS=true \
   AI_WORKSPACE_SECURITY_LEVEL=strict \

@@ -35,7 +35,7 @@ Ubuntu 20.04 不在默认支持矩阵中，因为标准支持已移至 Ubuntu Pr
 在线引导脚本优先使用 `ai-workspace-lab/xworkspace-console` GitHub 版本发布中对应的离线包（当其可用时）：
 
 ```bash
-curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/xworkspace-console/main/scripts/setup-ai-workspace-all-in-one.sh | bash -
+curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/XLaunch/main/scripts/setup-ai-workspace-all-in-one.sh | bash -
 ```
 
 将 `AI_WORKSPACE_OFFLINE_MODE=off` 设置为强制使用传统的纯在线路径，或者将 `AI_WORKSPACE_OFFLINE_MODE=force` 设置为在无法准备匹配的离线包时失败。
@@ -43,7 +43,7 @@ curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/xworkspace-console/
 默认包的获取源是：
 
 ```text
-https://github.com/ai-workspace-lab/xworkspace-console/releases/download/<tag>/ai-workspace-all-in-one-offline-<distro>-<version>-<arch>.tar.gz
+https://github.com/ai-workspace-lab/XLaunch/releases/download/<tag>/ai-workspace-all-in-one-offline-<distro>-<version>-<arch>.tar.gz
 ```
 
 当 `AI_WORKSPACE_OFFLINE_RELEASE_TAG=latest` 时，引导脚本会向 GitHub 请求最新且实际包含匹配 tarball 资产的非草稿发布版本，因此如果 `releases/latest` 目标缺少该文件，它将跳过该发布版本。固定的发布版本标签仍可像以前一样工作。

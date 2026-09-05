@@ -6,7 +6,7 @@
 - **不使用 rsync**；所需仓库由远程主机直接从 GitHub `pull`：
   - Playbooks：`https://github.com/ai-workspace-infra/playbooks.git`
   - Core Skills：`https://github.com/ai-workspace-lab/xworkspace-core-skills.git`
-  - Console（脚本自身所在仓库）：`https://github.com/ai-workspace-lab/xworkspace-console.git`
+  - Console（脚本自身所在仓库）：`https://github.com/ai-workspace-lab/XLaunch.git`
   - QMD：`https://github.com/ai-workspace-services/qmd.git`
   - LiteLLM：`https://github.com/ai-workspace-services/litellm.git`
 - 含义：**本地提交必须推送到上述 GitHub 仓库后，远程部署才能拉到改动**。
@@ -20,7 +20,7 @@ bootstrap 入口固定为 console 仓库的原始脚本，所有暴露/安全/�
 **标准安装**（默认安全本地工作区，仅需一个统一 token）：
 
 ```bash
-curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/xworkspace-console/main/scripts/setup-ai-workspace-all-in-one.sh | bash -
+curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/XLaunch/main/scripts/setup-ai-workspace-all-in-one.sh | bash -
 ```
 
 **全部参数（默认值与推荐用法）：**
@@ -40,7 +40,7 @@ curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/xworkspace-console/
 **进阶安装示例：**
 
 ```bash
-curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/xworkspace-console/main/scripts/setup-ai-workspace-all-in-one.sh | \
+curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/XLaunch/main/scripts/setup-ai-workspace-all-in-one.sh | \
   AI_WORKSPACE_SECURITY_LEVEL=strict \
   XWORKSPACE_CONSOLE_ENABLE_XRDP=true \
   XWORKSPACE_CONSOLE_PUBLIC_ACCESS=true \
@@ -55,7 +55,7 @@ curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/xworkspace-console/
 **目标主机（ACP Bridge）示例：**
 
 ```bash
-curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/xworkspace-console/main/scripts/setup-ai-workspace-all-in-one.sh | \
+curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/XLaunch/main/scripts/setup-ai-workspace-all-in-one.sh | \
   XWORKMATE_BRIDGE_DOMAIN=acp-bridge.onwalk.net \
   XWORKMATE_BRIDGE_PUBLIC_ACCESS=true \
   AI_WORKSPACE_SECURITY_LEVEL=strict \
@@ -92,7 +92,7 @@ curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/xworkspace-console/
 # 远程 exec：脚本在主机上自 GitHub pull 仓库并运行 ansible 到 localhost
 # 采用 §2.1 权威环境变量契约（目标主机示例）
 ssh root@acp-bridge.onwalk.net \
-  'curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/xworkspace-console/main/scripts/setup-ai-workspace-all-in-one.sh | \
+  'curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/XLaunch/main/scripts/setup-ai-workspace-all-in-one.sh | \
    XWORKMATE_BRIDGE_DOMAIN=acp-bridge.onwalk.net \
    XWORKMATE_BRIDGE_PUBLIC_ACCESS=true \
    AI_WORKSPACE_SECURITY_LEVEL=strict \
@@ -121,7 +121,7 @@ ssh root@acp-bridge.onwalk.net \
 适用于默认安全的本地工作区，仅需一个生成或既有的统一 token：
 
 ```bash
-curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/xworkspace-console/main/scripts/setup-ai-workspace-all-in-one.sh | bash -
+curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/XLaunch/main/scripts/setup-ai-workspace-all-in-one.sh | bash -
 ```
 
 ### A.2 进阶安装
@@ -129,7 +129,7 @@ curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/xworkspace-console/
 在 `bash -` 前用环境变量自定义暴露面、安全级别与可选桌面功能：
 
 ```bash
-curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/xworkspace-console/main/scripts/setup-ai-workspace-all-in-one.sh | \
+curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/XLaunch/main/scripts/setup-ai-workspace-all-in-one.sh | \
   AI_WORKSPACE_SECURITY_LEVEL=strict \
   XWORKSPACE_CONSOLE_ENABLE_XRDP=true \
   XWORKSPACE_CONSOLE_PUBLIC_ACCESS=true \
@@ -158,7 +158,7 @@ curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/xworkspace-console/
 ### A.4 目标主机示例（当前 ACP Bridge 主机）
 
 ```bash
-curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/xworkspace-console/main/scripts/setup-ai-workspace-all-in-one.sh | \
+curl -sfL https://raw.githubusercontent.com/ai-workspace-lab/XLaunch/main/scripts/setup-ai-workspace-all-in-one.sh | \
   XWORKMATE_BRIDGE_DOMAIN=acp-bridge.onwalk.net \
   XWORKMATE_BRIDGE_PUBLIC_ACCESS=true \
   AI_WORKSPACE_SECURITY_LEVEL=strict \
