@@ -1,5 +1,26 @@
 #include "catalog.h"
 #include <QFileInfo>
+#include <QJsonDocument>
+#include <QJsonObject>
+#include <QLocalSocket>
+#include <QUrl>
+
+namespace {
+constexpr auto xdockLaunchEventServer = "ai-workspace-lab.xdock.launch-events";
+
+void notifyXDock(const Application &app) {
+    QLocalSocket socket;
+    socket.connectToServer(QString::fromLatin1(xdockLaunchEventServer));
+    if (!socket.waitForConnected(150)) return;
+    const auto encodedPath = QString::fromLatin1(QUrl::toPercentEncoding(app.path));
+    const QJsonObject event{{"type", "launched"}, {"name", app.name},
+                            {"launchId", app.path}, {"icon", "path:" + encodedPath}};
+    socket.write(QJsonDocument(event).toJson(QJsonDocument::Compact));
+    socket.write("\n");
+    socket.waitForBytesWritten(150);
+}
+}
+
 Catalog::Catalog(){refresh();}
 void Catalog::refresh(){apps=discoverApplications();filter();}
 void Catalog::setQuery(QString q){if(q==m_query)return;m_query=q;filter();}
@@ -23,5 +44,6 @@ QVariantList Catalog::page(int start,int size)const{
 }
 bool Catalog::launch(int row){
  if(row<0||row>=visible.size())return false;
- QString error; if(openApplication(apps[visible[row]].path,error)){emit launched();return true;}emit failure(error);return false;
+ const auto &app=apps[visible[row]];
+ QString error; if(openApplication(app.path,error)){notifyXDock(app);emit launched();return true;}emit failure(error);return false;
 }
